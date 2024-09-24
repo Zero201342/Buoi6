@@ -1,0 +1,59 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.body {
+    background-color: #100918;
+}
+.sidebar {
+    width: 200px;
+    background-color: #340369;
+    color: white;
+    height: 100vh;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+    background-color: #5620a8; /* Darker shade of the sidebar color for hover effect */
+}
+
+.menu-item.live {
+    color: red;
+    font-weight: bold;
+}
+
+.menu-item.special {
+    background-color: #5620a8;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.menu-item.create {
+    text-align: center;
+    font-weight: bold;
+    padding: 15px 20px;
+    background-color: purple; /* Slightly different color for creation button */
+    margin-top: 20px;
+}

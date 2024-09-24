@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zing MP3 Clone</title>
+    <link rel="stylesheet" href="zing.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            Zing mp3
+        </div>
+        <ul class="menu">
+            <li class="menu-item">Thu Viện</li>
+            <li class="menu-item">Khám Phá</li>
+            <li class="menu-item">#zingchart</li>
+            <li class="menu-item live">Radio LIVE</li>
+            <li class="menu-item">BXH Nhạc Mới</li>
+            <li class="menu-item">Chủ Đề & Thể Loại</li>
+            <li class="menu-item">Top 100</li>
+            <li class="menu-item special">Đăng nhập để khám phá playlist danh riêng cho bạn</li>
+            <li class="menu-item create">Tạo playlist mới</li>
+        </ul>
+    </div>
+    <div class="top-bar">
+        <!-- Top bar content -->
+    </div>
+    <div class="content-area">
+        <!-- Cards for songs or albums -->
+    </div>
+<script>
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseover', () => {
+            card.style.transform = 'scale(1.1)';
+        });
+        card.addEventListener('mouseout', () => {
+            card.style.transform = 'scale(1)';
+        });
+    });
+</script>
+</body>
+</html>

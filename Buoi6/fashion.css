@@ -1,0 +1,175 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0; /* Đảm bảo không có khoảng đệm trên toàn bộ trang */
+    font-family: Arial, sans-serif;
+    background-color: #524c45; /* Màu nền */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Căn các thành phần sát cạnh trái */
+    width: 100vw; /* Chiều rộng của viewport */
+    position: relative; /* Vị trí tương đối cho container để có thể vị trí tuyệt đối các con */
+}
+
+.header img {
+    width: 120px; /* Kích thước cụ thể của logo */
+    height: auto;
+    margin-top: 0px; /* Không có margin trên để logo sát trên cùng */
+    margin-left: 0px; /* Không có margin trái để logo sát mép trái */
+}
+
+.main img {
+    position: absolute; /* Vị trí tuyệt đối */
+    top: 0; /* Sát phía trên của container */
+    left: 0; /* Sát phía trái của container */
+    width: 377px; /* Chiều rộng cụ thể của ảnh chính */
+    height: 817px; /* Chiều cao cụ thể của ảnh chính */
+    margin: 0px; /* Không có khoảng cách */
+    padding: 0px; /* Không có đệm */
+    border: none; /* Không viền */
+}
+.navbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent; /* Bỏ màu nền */
+    display: flex;
+    justify-content: flex-end; /* Căn phải các mục trong thanh nav */
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Thêm margin 0 để không có khoảng cách thừa */
+}
+
+.navbar li {
+    display: inline-block; /* Sử dụng inline-block để các mục nằm ngang trong thanh nav */
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar li a {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Giữ thanh trắng không bị lộ ra ngoài phạm vi của liên kết */
+    color: white; /* Đặt màu chữ là trắng */
+    text-decoration: none; /* Loại bỏ gạch chân */
+}
+
+.navbar li a::after, .dropdown-content a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-out; /* Thay đổi chiều rộng của thanh trắng */
+}
+
+.navbar li a:hover::after, .dropdown-content a:hover::after {
+    width: 100%; /* Kéo dài thanh trắng ra toàn bộ chiều rộng của liên kết */
+    left: 0;
+    transform: translateX(0%);
+}
+
+.navbar li a:hover {
+    color: white; /* Giữ màu chữ không đổi khi di chuột qua */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Giữ màu nền cho dropdown để đảm bảo nội dung rõ ràng */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column; /* Sắp xếp các mục theo chiều dọc */
+}
+
+.dropdown-content a {
+    position: relative;
+    display: inline-block;
+    color: black; /* Màu chữ ban đầu cho dropdown links */
+    padding: 12px 16px;
+    text-decoration: none;
+    overflow: hidden;
+    text-align: left;
+}
+
+.dropdown-content a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: black; /* Màu của thanh split trong dropdown */
+    transition: width 0.3s ease-out;
+}
+
+.dropdown-content a:hover::after {
+    width: 100%;
+    left: 0;
+    transform: translateX(0%);
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex; /* Hiển thị các mục khi hover và xếp chúng theo chiều dọc */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd; /* Màu nền khi hover trên dropdown link */
+    color: black; /* Giữ màu chữ màu đen khi hover */
+}
+
+.dropdown:hover a, .navbar li:hover a {
+    background-color: transparent; /* Thay đổi màu khi hover */
+    color: black;
+}
+
+/* Hiệu ứng thanh trắng dưới chữ khi di chuột vào cho các mục navbar và dropdown */
+.navbar li a, .dropdown-content a {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Giữ thanh trắng không bị lộ ra ngoài phạm vi của liên kết */
+    color: white; /* Đặt màu chữ là trắng cho navbar */
+    text-decoration: none; /* Loại bỏ gạch chân */
+}
+
+.navbar li a::after, .dropdown-content a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-out; /* Thay đổi chiều rộng của thanh trắng */
+}
+
+.navbar li a:hover::after, .dropdown-content a:hover::after {
+    width: 100%; /* Kéo dài thanh trắng ra toàn bộ chiều rộng của liên kết */
+    left: 0;
+    transform: translateX(0%);
+}
+
+.navbar li a:hover, .dropdown-content a:hover {
+    color: white; /* Giữ màu chữ không đổi khi di chuột qua cho navbar */
+    color: black; /* Màu đen cho các liên kết trong dropdown khi hover */
+}
